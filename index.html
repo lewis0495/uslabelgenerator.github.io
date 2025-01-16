@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Label Generator</title>
+    <style>
+        @font-face {
+            font-family: 'Dancing Script';
+            src: url('fonts/DancingScript-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #formImage {
+            position: relative;
+            width: 800px;
+            height: auto;
+        }
+
+        .text-box {
+            position: absolute;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+        }
+
+        #overlaySigned {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        button {
+            width: 300px;
+            height: 50px;
+            font-size: 40px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+</head>
+<body>
+    <h1>US Label Generator</h1>
+    <p>Fill in the text fields below then click the "Download" button below the US Label preview</p>
+
+    <label>Description:<br> <input type="text" id="description" style="width: 500px;"></label><br>
+    <label>QTY: <br> <input type="text" id="qty"></label><br>
+    <label>Part No.: <br><input type="text" id="partNo"></label><br>
+    <label>Serial No.: <br><input type="text" id="serialNo"></label><br>
+    <label>Select Aircraft: <br>
+        <select id="removedFrom">
+            <option value="NIL">NIL</option>
+            <option value="OTHER - SEE BELOW">OTHER - SEE BELOW</option>
+            <option value="G-PJCD">G-PJCD</option>
+            <option value="G-PJCM">G-PJCM</option>
+            <option value="G-PJCN">G-PJCN</option>
+            <option value="G-PJCS">G-PJCS</option>
+        </select>
+    </label><br>
+    <label>OR enter manually:<br> <input type="text" id="removedfrominput"></label><br>
+    <label>Removed From Serial: <br><input type="text" id="removedFromSerial"></label><br>
+    <label>Work Order No.: <br><input type="text" id="workOrderNo"></label><br>
+    <!-- Add this inside your HTML form -->
+<label>
+    Auto fill cycles & hours? <input type="checkbox" id="populateDataCheckbox"> <br>
+</label>
+
+    <label>Total Hours: <br><input type="text" id="totalHours"></label><br>
+    <label>Total Cycles: <br><input type="text" id="totalCycles"></label><br>
+    <label>Reason for removal:<br> 
+        <textarea id="reasonForRemoval" style="width: 500px; height: 40px;"></textarea>
+    </label><br>        
+    <label>Signed: <br> <input type="text" id="signed"></label><br>
+    <label>Authority: <br><input type="text" id="authority"></label><br>
+    <label>Date:<br> <input type="text" id="date"></label><br>
+        
+    <div id="formImage">
+        <img src="USLABEL.JPG" alt="Form Image">
+        <div id="overlayDescription" class="text-box"></div>
+        <div id="overlayQty" class="text-box"></div>
+        <div id="overlayPartNo" class="text-box"></div>
+        <div id="overlaySerialNo" class="text-box"></div>
+        <div id="overlayremovedfrominput" class="text-box"></div>
+        <div id="overlayRemovedFromSerial" class="text-box"></div>
+        <div id="overlayWorkOrderNo" class="text-box"></div>
+        <div id="overlayTotalHours" class="text-box"></div>
+        <div id="overlayTotalCycles" class="text-box"></div>
+        <div id="overlayReasonForRemoval" class="text-box"></div>
+        <div id="overlaySigned" class="text-box"></div>
+        <div id="overlayAuthority" class="text-box"></div>
+        <div id="overlayDate" class="text-box"></div>
+    </div>
+    <button onclick="downloadImage()">Download</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
