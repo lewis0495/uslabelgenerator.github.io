@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let googleSheetData = [];
 
     // Fetch data from Google Sheets
-    fetch('https://script.google.com/macros/s/AKfycbwvX-Y12fFASowcj9wc99zjzBxeTW7yDhDZQRYPe0ytPT-oOTOOCHcrwOBVih5U2Bw0uw/exec')
+    fetch('https://script.google.com/macros/s/AKfycbz1BA06D3__nJ6z9WGSiLU3e_WNgT0EzJb_Id21P7e6s2tXfOemuKMejB2Xk0o-7caGkg/exec')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
